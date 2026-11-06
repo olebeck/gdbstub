@@ -275,5 +275,6 @@ pub mod process_info;
 pub mod section_offsets;
 pub mod target_description_xml_override;
 pub mod thread_extra_info;
+pub mod threads;
 pub mod tracepoints;
 pub mod wasm;

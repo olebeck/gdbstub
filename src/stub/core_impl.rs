@@ -45,6 +45,7 @@ mod section_offsets;
 mod single_register_access;
 mod target_xml;
 mod thread_extra_info;
+mod threads;
 mod tracepoints;
 mod wasm;
 mod x_lowcase_packet;
@@ -226,6 +227,7 @@ impl<T: Target, C: Connection> GdbStubImpl<T, C> {
             Command::LldbRegisterInfo(cmd) => self.handle_lldb_register_info(res, target, cmd),
             Command::LibrariesSvr4(cmd) => self.handle_libraries_svr4(res, target, cmd),
             Command::Libraries(cmd) => self.handle_libraries(res, target, cmd),
+            Command::Threads(cmd) => self.handle_threads(res, target, cmd),
             Command::Tracepoints(cmd) => self.handle_tracepoints(res, target, cmd),
             Command::HostInfo(cmd) => self.handle_host_info(res, target, cmd),
             Command::ProcessInfo(cmd) => self.handle_process_info(res, target, cmd),

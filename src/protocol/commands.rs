@@ -360,6 +360,10 @@ commands! {
         "qXfer:libraries:read" => _qXfer_libraries_read::qXferLibrariesRead<'a>,
     }
 
+    threads use 'a {
+        "qXfer:threads:read" => _qXfer_threads_read::qXferThreadsRead<'a>,
+    }
+
     tracepoints use 'a {
         "QTDPsrc" => _QTDPsrc::QTDPsrc<'a>,
         "QTDP" => _QTDP::QTDP<'a>,

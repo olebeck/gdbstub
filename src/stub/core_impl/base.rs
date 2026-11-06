@@ -246,6 +246,10 @@ impl<T: Target, C: Connection> GdbStubImpl<T, C> {
                     res.write_str(";qXfer:libraries:read+")?;
                 }
 
+                if target.support_threads().is_some() {
+                    res.write_str(";qXfer:threads:read+")?;
+                }
+
                 HandlerStatus::Handled
             }
 

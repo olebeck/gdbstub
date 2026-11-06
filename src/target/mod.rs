@@ -797,6 +797,12 @@ pub trait Target {
         None
     }
 
+    /// Support for reading a list of threads.
+    #[inline(always)]
+    fn support_threads(&mut self) -> Option<ext::threads::ThreadsOps<'_, Self>> {
+        None
+    }
+
     /// (LLDB extension) Support for reporting host information.
     #[inline(always)]
     fn support_host_info(&mut self) -> Option<ext::host_info::HostInfoOps<'_, Self>> {
